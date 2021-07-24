@@ -12,7 +12,7 @@ import Register from "./Component/Register/Register"
 // liberty
 //Particles
 import PArticlesOpt from "./particlesjs-config.json"
-import Particles from "react-particles-js"
+// import Particles from "react-particles-js"
 
 //Conditionals to initialize the Web App
 const initialState = {
@@ -154,7 +154,7 @@ class App extends Component {
     const { name, entries } = this.state.user
     return (
       <div className="App">
-        <Particles className="particles" params={PArticlesOpt} />
+        {/* <Particles className="particles" params={PArticlesOpt} />*/}
         <Navigation
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
