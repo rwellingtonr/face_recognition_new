@@ -17,23 +17,29 @@ class SignIn extends Component {
   onPasswordChange = (event) => {
     this.setState({ password: event.target.value })
   }
+
+  handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      this.onSubmitSigin()
+    } else {
+      console.log(event.key)
+    }
+  }
+
   //   when the user click the submit button
   onSubmitSigin = async () => {
     try {
       const { loadUser, onRouteChange } = this.props
       const { email, password } = this.state
       // // post the user credentials
-      const response = await fetch(
-        "https://gentle-caverns-57673.herokuapp.com/signin",
-        {
-          method: "post",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: email,
-            password: password,
-          }),
-        }
-      )
+      const response = await fetch(`${process.env.DATABASE_PATH_KEY}/signin`, {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      })
       const user = await response.json()
       if (user.id) {
         loadUser(user)
@@ -74,6 +80,7 @@ class SignIn extends Component {
                 </label>
                 <input
                   onChange={this.onPasswordChange}
+                  onKeyPress={this.handleKeyPress}
                   className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="password"
                   name="password"
