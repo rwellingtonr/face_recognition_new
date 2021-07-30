@@ -68,7 +68,7 @@ class SignIn extends Component {
                 </label>
                 <input
                   onChange={this.onEmailChange}
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="pa2 input-reset ba b--black bg-transparent hover-bg-black hover-white w-100"
                   type="email"
                   name="email-address"
                   id="email-address"
@@ -82,7 +82,7 @@ class SignIn extends Component {
                 <input
                   onChange={this.onPasswordChange}
                   onKeyPress={this.handleKeyPress}
-                  className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="b pa2 input-reset ba b--black bg-transparent hover-bg-black hover-white w-100"
                   type="password"
                   name="password"
                   id="password"

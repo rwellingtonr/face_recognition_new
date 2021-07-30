@@ -68,7 +68,7 @@ class Register extends Component {
                 Name
               </label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="pa2 input-reset ba b--black bg-transparent hover-bg-black hover-white w-100"
                 type="text"
                 name="Name"
                 id="Name"
@@ -80,7 +80,7 @@ class Register extends Component {
                 Email address
               </label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="pa2 input-reset ba b--black bg-transparent hover-bg-black hover-white w-100"
                 type="email"
                 required
                 name="email-address"
@@ -93,7 +93,7 @@ class Register extends Component {
                 Password
               </label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="pa2 input-reset ba b--black bg-transparent hover-bg-black hover-white w-100"
                 type="password"
                 name="password"
                 id="password"
@@ -104,7 +104,7 @@ class Register extends Component {
           <div className="mt3">
             <input
               onClick={this.onClickRegister}
-              className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+              className="b ph3 pv2 input-reset ba b--black b--black bg-transparent grow pointer f6 dib"
               type="submit"
               value="Register"
             />
