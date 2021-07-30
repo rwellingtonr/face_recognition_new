@@ -54,7 +54,7 @@ class Register extends Component {
 
   render() {
     return (
-      <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 center shadow-5">
+      <article className="br3 ba b--black-10 mv4 w-80-ns w-50-m w-25-l mw6 center shadow-5">
         <div
           className="pa4"
           action="sign-up_submit"
