@@ -21,8 +21,6 @@ class SignIn extends Component {
   handleKeyPress = (event) => {
     if (event.key === "Enter") {
       this.onSubmitSigin()
-    } else {
-      console.log(event.key)
     }
   }
 
@@ -30,9 +28,10 @@ class SignIn extends Component {
   onSubmitSigin = async () => {
     try {
       const { loadUser, onRouteChange } = this.props
+      const pathDb = process.env.DATABASE_PATH_KEY
       const { email, password } = this.state
       // // post the user credentials
-      const response = await fetch(`${process.env.DATABASE_PATH_KEY}/signin`, {
+      const response = await fetch(`${pathDb}/signin`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
