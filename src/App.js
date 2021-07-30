@@ -55,7 +55,6 @@ class App extends Component {
   onButtonSubmit = async () => {
     const { input, user } = this.state
     try {
-      this.setState({ imageUrl: input })
       const response = await fetch(
         "https://gentle-caverns-57673.herokuapp.com/imageurl",
         {
@@ -71,7 +70,9 @@ class App extends Component {
       )
       const faceImg = await response.json()
       // Check whether there is or there isn't a face in the picture
+      // .outputs[0].data.regions[0].value
       if (faceImg.outputs[0].data.regions[0].value) {
+        this.setState({ imageUrl: input })
         const res = await fetch(
           "https://gentle-caverns-57673.herokuapp.com/image",
           {
