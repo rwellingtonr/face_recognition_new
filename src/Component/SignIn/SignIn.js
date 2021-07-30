@@ -28,17 +28,19 @@ class SignIn extends Component {
   onSubmitSigin = async () => {
     try {
       const { loadUser, onRouteChange } = this.props
-      const pathDb = process.env.DATABASE_PATH_KEY
       const { email, password } = this.state
       // // post the user credentials
-      const response = await fetch(`${pathDb}/signin`, {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      })
+      const response = await fetch(
+        "https://gentle-caverns-57673.herokuapp.com/signin",
+        {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        }
+      )
       const user = await response.json()
       if (user.id) {
         loadUser(user)

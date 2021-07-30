@@ -153,7 +153,7 @@ class App extends Component {
     const { isSignedIn, imageUrl, route, box } = this.state
     const { name, entries } = this.state.user
     return (
-      <div className="App">
+      <div className="tc">
         <Particles className="particles" params={PArticlesOpt} />
         <Navigation
           isSignedIn={isSignedIn}
