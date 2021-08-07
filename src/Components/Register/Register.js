@@ -1,52 +1,25 @@
-import React, { useState } from "react"
+import React from "react"
 import DefaultForm from "../Forms/defaultForm"
 import NameForm from "../Forms/nameForm"
+import {
+  onNameChange,
+  onEmailChange,
+  onPasswordChange,
+  signUp,
+} from "../Forms/postData"
 
 const Register = (props) => {
-  //Inital State
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-
-  //   change name
-  const onNameChange = (event) => {
-    console.log(event.target.value)
-    setName(event.target.value)
-  }
-  // change email
-  const onEmailChange = (event) => {
-    this.setState({ email: event.target.value })
-  }
-  // change password
-  const onPasswordChange = (event) => {
-    this.setState({ password: event.target.value })
-  }
   // Submit the registration
   const onClickRegister = async () => {
-    try {
-      const { loadUser, onRouteChange } = props
-      //write in the Database
-      const response = await fetch(
-        "https://gentle-caverns-57673.herokuapp.com/register",
-        {
-          method: "post",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: name,
-            email: email,
-            password: password,
-          }),
-        }
-      )
-      const user = await response.json()
-      if (user.name.length > 1) {
-        loadUser(user)
-        onRouteChange("home")
-      } else {
-        alert("Provide all data")
-      }
-    } catch (error) {
-      alert("Provide all data")
+    const { loadUser, onRouteChange } = props
+    const data = await signUp()
+    loadUser(data)
+    onRouteChange("home")
+  }
+  //If the user press Enter, then the app will call the onClickRegistration method
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      onClickRegister()
     }
   }
 
@@ -65,6 +38,8 @@ const Register = (props) => {
           </fieldset>
           <div className="">
             <input
+              onClick={onClickRegister}
+              onKeyPress={handleKeyPress}
               className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
               value="Register"

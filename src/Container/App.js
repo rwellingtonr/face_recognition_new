@@ -29,7 +29,6 @@ const initialState = {
     joined: "",
   },
 }
-
 class App extends Component {
   constructor() {
     super()
