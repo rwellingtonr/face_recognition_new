@@ -1,13 +1,13 @@
 import React, { Component } from "react"
 import "./App.css"
 // Components
-import Navigation from "./Component/Navigation/Navigation"
-import Logo from "./Component/Logo"
-import ImageLinkForm from "./Component/ImageLinkForm"
-import Rank from "./Component/Rank"
-import FaceRecognition from "./Component/FaceRecognition"
-import SignIn from "./Component/SignIn/SignIn"
-import Register from "./Component/Register/Register"
+import Navigation from "../Components/Navigation/Navigation"
+import Logo from "../Components/Logo"
+import ImageLinkForm from "../Components/ImageLinkForm"
+import Rank from "../Components/Rank"
+import FaceRecognition from "../Components/FaceRecognition"
+import SignIn from "../Components/SignIn/SignIn"
+import Register from "../Components/Register/Register"
 
 // liberty
 //Particles

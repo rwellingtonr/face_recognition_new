@@ -4,8 +4,11 @@ import "./styles.css"
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
   return (
     <div>
-      <p className="f3">
-        {"This Magic Brain will detect faces in your pictures. Give a try "}
+      <p className="f4 ma-2 white">
+        {"This smart app will detect faces in your images."}
+      </p>
+      <p className="f4 ma-2 white">
+        {"Please paste your image link in the search field below"}
       </p>
       <div className="center">
         <div className="center form pa4 br3 shadow-5">
