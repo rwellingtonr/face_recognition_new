@@ -8,8 +8,11 @@ import Rank from "../Components/Rank"
 import FaceRecognition from "../Components/FaceRecognition"
 import SignIn from "../Components/SignIn/SignIn"
 import Register from "../Components/Register/Register"
+
+//external methods
 import { initialState } from "./AppProps"
 import { checkFace, entriesCount } from "./Connections"
+import { calculateFaceLocation } from "../Components/FaceRecognition/FaceLocation"
 
 // liberty
 //Particles
@@ -54,24 +57,10 @@ class App extends Component {
       const count = await entriesCount(user)
       this.setState({ ...user, entries: count })
       //call the callculation
-      this.displayFaceBox(this.calculateFaceLocation(checkingIn))
+      this.displayFaceBox(calculateFaceLocation(checkingIn))
     }
     const inputField = document.getElementById("inputForm")
     inputField.value = ""
-  }
-
-  calculateFaceLocation = (data) => {
-    const clarifaiFace =
-      data.outputs[0].data.regions[0].region_info.bounding_box
-    const image = document.getElementById("inputimage")
-    const width = Number(image.width)
-    const height = Number(image.height)
-    return {
-      leftCol: clarifaiFace.left_col * width,
-      topRow: clarifaiFace.top_row * height,
-      rightCol: width - clarifaiFace.right_col * width,
-      bottomRow: height - clarifaiFace.bottom_row * height,
-    }
   }
 
   onRouteChange = (route) => {
