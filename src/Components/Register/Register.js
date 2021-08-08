@@ -9,10 +9,16 @@ import {
 } from "../Forms/postData"
 
 const Register = (props) => {
+  //Define the page name
+  const pagename = "Register"
+
+  //Rename the title name
+  document.title = pagename
+
   // Submit the registration
   const onClickRegister = async () => {
     const { loadUser, onRouteChange } = props
-    const data = await signUp()
+    const data = await signUp(pagename.toLowerCase())
     loadUser(data)
     onRouteChange("home")
   }
@@ -28,7 +34,7 @@ const Register = (props) => {
       <main className="pa4 black-80">
         <div className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f2 fw6 ph0 center mh0">Register</legend>
+            <legend className="f2 fw6 ph0 center mh0">{pagename}</legend>
             <NameForm onNameChange={onNameChange} />
             {/* Email and Password */}
             <DefaultForm
@@ -42,7 +48,7 @@ const Register = (props) => {
               onKeyPress={handleKeyPress}
               className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
-              value="Register"
+              pageName="Register"
             />
           </div>
         </div>

@@ -17,11 +17,11 @@ export const onPasswordChange = (event) => {
   data.password = event.target.value
 }
 // Fetch the server to sign up this user.
-export const signUp = async () => {
+export const signUp = async (path) => {
   try {
     //write in the Database
     const response = await fetch(
-      "https://gentle-caverns-57673.herokuapp.com/register",
+      "https://gentle-caverns-57673.herokuapp.com/" + path,
       {
         method: "post",
         headers: { "Content-Type": "application/json" },
