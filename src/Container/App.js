@@ -8,6 +8,8 @@ import Rank from "../Components/Rank"
 import FaceRecognition from "../Components/FaceRecognition"
 import SignIn from "../Components/SignIn/SignIn"
 import Register from "../Components/Register/Register"
+import { initialState } from "./AppProps"
+import { checkFace, entriesCount } from "./Connections"
 
 // liberty
 //Particles
@@ -15,20 +17,7 @@ import PArticlesOpt from "./particlesjs-config.json"
 import Particles from "react-particles-js"
 
 //Conditionals to initialize the Web App
-const initialState = {
-  input: "",
-  imageUrl: "",
-  box: {},
-  route: "signin",
-  isSignedIn: false,
-  user: {
-    id: "",
-    name: "",
-    email: "",
-    entries: 0,
-    joined: "",
-  },
-}
+
 class App extends Component {
   constructor() {
     super()
@@ -46,74 +35,9 @@ class App extends Component {
       },
     })
   }
-
+  //update the input field
   onInputChange = (event) => {
-    this.setState({ input: event.target.value })
-  }
-
-  onButtonSubmit = async () => {
-    const { input, user } = this.state
-    try {
-      const response = await fetch(
-        "https://gentle-caverns-57673.herokuapp.com/imageurl",
-        {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: window.sessionStorage.getItem("token"),
-          },
-          body: JSON.stringify({
-            input: input,
-          }),
-        }
-      )
-      const faceImg = await response.json()
-      // Check whether there is or there isn't a face in the picture
-      // .outputs[0].data.regions[0].value
-      if (faceImg.outputs[0].data.regions[0].value) {
-        this.setState({ imageUrl: input })
-        const res = await fetch(
-          "https://gentle-caverns-57673.herokuapp.com/image",
-          {
-            method: "put",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: window.sessionStorage.getItem("token"),
-            },
-            body: JSON.stringify({
-              id: this.state.user.id,
-            }),
-          }
-        )
-        //load the image
-        //count the entries
-        const count = await res.json()
-        this.setState(Object.assign(user, { entries: count }))
-        //call the callculation
-        this.displayFaceBox(this.calculateFaceLocation(faceImg))
-      }
-    } catch (err) {
-      this.setState({ imageUrl: "" })
-      console.log(err)
-      alert("This image hasn't a face!")
-    } finally {
-      const inputForm = document.getElementById("inputForm")
-      inputForm.value = ""
-    }
-  }
-
-  calculateFaceLocation = (data) => {
-    const clarifaiFace =
-      data.outputs[0].data.regions[0].region_info.bounding_box
-    const image = document.getElementById("inputimage")
-    const width = Number(image.width)
-    const height = Number(image.height)
-    return {
-      leftCol: clarifaiFace.left_col * width,
-      topRow: clarifaiFace.top_row * height,
-      rightCol: width - clarifaiFace.right_col * width,
-      bottomRow: height - clarifaiFace.bottom_row * height,
-    }
+    this.setState({ input: event.target.value, imageUrl: "" })
   }
 
   // This function will receive the return value of calculateFaceLocation
@@ -121,6 +45,21 @@ class App extends Component {
     this.setState({ box: box })
   }
 
+  onButtonSubmit = async () => {
+    const { input, user } = this.state
+    const checkingIn = await checkFace(input)
+    if (checkingIn) {
+      this.setState({ imageUrl: input })
+      //count the entries
+      const count = await entriesCount(user)
+      this.setState({ ...user, entries: count })
+      //call the callculation
+      this.displayFaceBox(this.calculateFaceLocation(checkingIn))
+    }
+    const inputField = document.getElementById("inputForm")
+    inputField.value = ""
+  }
+
   calculateFaceLocation = (data) => {
     const clarifaiFace =
       data.outputs[0].data.regions[0].region_info.bounding_box
@@ -133,11 +72,6 @@ class App extends Component {
       rightCol: width - clarifaiFace.right_col * width,
       bottomRow: height - clarifaiFace.bottom_row * height,
     }
-  }
-
-  displayFaceBox = (box) => {
-    this.setState({ box: box })
-    // console.log(box);
   }
 
   onRouteChange = (route) => {

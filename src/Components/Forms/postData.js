@@ -1,5 +1,5 @@
 // Main data
-const data = {
+export const data = {
   name: "",
   email: "",
   password: "",
@@ -15,30 +15,4 @@ export const onEmailChange = (event) => {
 // Password
 export const onPasswordChange = (event) => {
   data.password = event.target.value
-}
-// Fetch the server to sign up this user.
-export const signUp = async (path) => {
-  try {
-    //write in the Database
-    const response = await fetch(
-      "https://gentle-caverns-57673.herokuapp.com/" + path,
-      {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          password: data.password,
-        }),
-      }
-    )
-    const user = await response.json()
-    if (user.name.length > 1) {
-      return user
-    } else {
-      alert("Provide all data")
-    }
-  } catch (error) {
-    alert("Provide all data")
-  }
 }

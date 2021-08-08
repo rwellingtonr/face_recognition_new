@@ -1,10 +1,17 @@
+/* Remove the scroll bar, but it still working */
+html {
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+  scrollbar-width: none !important; /* Firefox */
+  overflow: -moz-scrollbars-none !important;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background: linear-gradient(87deg, #7d1869 0%, #bfb02f 100%);
-  overflow: hidden;
 }
+
 button {
   cursor: pointer;
 }

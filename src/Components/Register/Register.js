@@ -1,11 +1,11 @@
 import React from "react"
+import { connectionDb } from "../../Container/Connections"
 import DefaultForm from "../Forms/defaultForm"
 import NameForm from "../Forms/nameForm"
 import {
   onNameChange,
   onEmailChange,
   onPasswordChange,
-  signUp,
 } from "../Forms/postData"
 
 const Register = (props) => {
@@ -15,7 +15,7 @@ const Register = (props) => {
   // Submit the registration
   const onClickRegister = async () => {
     const { loadUser, onRouteChange } = props
-    const data = await signUp(pageName.toLowerCase())
+    const data = await connectionDb(pageName.toLowerCase())
     loadUser(data)
     onRouteChange("home")
   }

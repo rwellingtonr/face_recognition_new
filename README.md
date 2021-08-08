@@ -9,12 +9,18 @@
 
 ## Motivations
 
+Web app created to learn how to make a full-stack app. Getting through the front-end, back-end and also database
+
 ## Features
 
 ## Technologies
 
-- ReactJS
-- Hooks
+| Font-End | Back-End  |  Database  | Deploy |
+| :------: | :-------: | :--------: | :----: |
+|          |           |            |        |
+| ReactJS  |  NodeJS   | PostgreSQL | Heroku |
+|  Hooks   | ExpressJS |
+|  Redux   |  KnexJS   |
 
 ## Running Locally
 
@@ -22,7 +28,7 @@
 git clone
 
 # open the folder
-cd monster_new
+cd
 
 #open the text editor
 code .
