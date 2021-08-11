@@ -6,7 +6,7 @@ const emailField = ({ onEmailChange }) => {
       </label>
       <input
         onChange={onEmailChange}
-        className="pa2 input-reset ba b--black bg-transparent hover-bg-black hover-white w-100"
+        className="pa2 input-reset ba b--black bg-transparent hover-bg-black hover-white w-80"
         type="email"
         required
         name="email-address"

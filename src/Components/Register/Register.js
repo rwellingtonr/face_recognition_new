@@ -14,10 +14,14 @@ const Register = (props) => {
 
   // Submit the registration
   const onClickRegister = async () => {
-    const { loadUser, onRouteChange } = props
-    const data = await connectionSignUp()
-    loadUser(data)
-    onRouteChange("home")
+    try {
+      const { loadUser, onRouteChange } = props
+      const data = await connectionSignUp()
+      loadUser(data)
+      onRouteChange("home")
+    } catch (error) {
+      console.log(error)
+    }
   }
   //If the user press Enter, then the app will call the onClickRegistration method
   const handleKeyPress = (event) => {
@@ -37,13 +41,13 @@ const Register = (props) => {
             <DefaultForm
               onEmailChange={onEmailChange}
               onPasswordChange={onPasswordChange}
-              onKeyPress={handleKeyPress}
+              handleKeyPress={handleKeyPress}
             />
           </fieldset>
           <div className="">
             <input
               onClick={onClickRegister}
-              className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+              className="b ph2 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
               value={pageName}
             />

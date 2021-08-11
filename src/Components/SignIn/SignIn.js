@@ -16,7 +16,7 @@ const SignIn = (props) => {
   //   when the user click the submit button
   const onSubmitSigin = async () => {
     try {
-      const { loadUser, onRouteChange } = this.props
+      const { loadUser, onRouteChange } = props
       const user = connectionSignIn()
       if (user.id) {
         loadUser(user)
@@ -39,13 +39,13 @@ const SignIn = (props) => {
             <DefaultForm
               onEmailChange={onEmailChange}
               onPasswordChange={onPasswordChange}
-              onKeyPress={handleKeyPress}
+              handleKeyPress={handleKeyPress}
             />
           </fieldset>
           <div className="">
             <input
               onClick={onSubmitSigin}
-              className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+              className="b ph2 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
               value={pageName}
             />
