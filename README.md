@@ -1,6 +1,8 @@
 # Face Recognition
 
-[![GitHub](https://img.shields.io/github/license/rwellingtonr/monster_new?color=blue)](https://github.com/rwellingtonr/face_recognition_new/blob/main/LICENSE.md) ![GitHub last commit](https://img.shields.io/github/last-commit/rwellingtonr/monster_new) ![GitHub repo size](https://img.shields.io/github/repo-size/rwellingtonr/face_recognition_new) ![GitHub top language]
+[![GitHub](https://img.shields.io/github/license/rwellingtonr/monster_new?color=blue)](https://github.com/rwellingtonr/face_recognition_new/blob/main/LICENSE.md) ![GitHub last commit](https://img.shields.io/github/last-commit/rwellingtonr/face_recognition_new) ![GitHub repo size](https://img.shields.io/github/repo-size/rwellingtonr/face_recognition_new) ![GitHub top language](https://img.shields.io/github/languages/top/rwellingtonr/face_recognition_new)
+
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Naereen/badges)
 
 <h2 align="left">
   <img src="" alt="face-recognition" width="600px" />
@@ -13,14 +15,16 @@ Web app created to learn how to make a full-stack app. Getting through the front
 
 ## Features
 
+This app uses the Clarifai API which allows face recognition on pictures
+
 ## Technologies
 
 | Font-End | Back-End  |  Database  | Deploy |
 | :------: | :-------: | :--------: | :----: |
 |          |           |            |        |
 | ReactJS  |  NodeJS   | PostgreSQL | Heroku |
-|  Hooks   | ExpressJS |
-|  Redux   |  KnexJS   |
+|          | ExpressJS |
+|          |  KnexJS   |
 
 ## Running Locally
 
