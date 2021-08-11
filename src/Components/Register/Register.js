@@ -1,5 +1,5 @@
 import React from "react"
-import { connectionDb } from "../../Container/Connections"
+import { connectionSignUp } from "../../Container/Connections"
 import DefaultForm from "../Forms/defaultForm"
 import NameForm from "../Forms/nameForm"
 import {
@@ -15,7 +15,7 @@ const Register = (props) => {
   // Submit the registration
   const onClickRegister = async () => {
     const { loadUser, onRouteChange } = props
-    const data = await connectionDb(pageName.toLowerCase())
+    const data = await connectionSignUp()
     loadUser(data)
     onRouteChange("home")
   }
@@ -37,12 +37,12 @@ const Register = (props) => {
             <DefaultForm
               onEmailChange={onEmailChange}
               onPasswordChange={onPasswordChange}
+              onKeyPress={handleKeyPress}
             />
           </fieldset>
           <div className="">
             <input
               onClick={onClickRegister}
-              onKeyPress={handleKeyPress}
               className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
               value={pageName}

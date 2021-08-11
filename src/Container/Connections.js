@@ -1,12 +1,29 @@
 import { data } from "../Components/Forms/postData"
+import { routes, url } from "./AppProps"
 
-const url = "https://gentle-caverns-57673.herokuapp.com/"
-
-// Fetch the server to sign up ou sign in this user.
-export const connectionDb = async (path) => {
+export const connectionSignIn = async () => {
   try {
-    //write in the Database
-    const response = await fetch(url + path, {
+    // // post the user credentials
+    const response = await fetch(url + routes.signin, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: data.email,
+        password: data.password,
+      }),
+    })
+    const userData = await response.json()
+    return userData
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+//write a new user to the Database
+export const connectionSignUp = async () => {
+  try {
+    //send the name, email and password to back-end where this password must be hashed
+    const response = await fetch(url + routes.register, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -30,7 +47,7 @@ export const connectionDb = async (path) => {
 export const checkFace = async (input) => {
   domElements()
   try {
-    const response = await fetch(url + "imageurl", {
+    const response = await fetch(url + routes.imageurl, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +71,7 @@ export const checkFace = async (input) => {
 // This one should incrise the entries if find a face
 export const entriesCount = async (user) => {
   try {
-    const res = await fetch(url + "image", {
+    const res = await fetch(url + routes.image, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
