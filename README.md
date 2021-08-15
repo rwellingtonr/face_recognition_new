@@ -1,17 +1,17 @@
-# Face Recognition
+# Face Recognition Webapp
 
 [![GitHub](https://img.shields.io/github/license/rwellingtonr/monster_new?color=blue)](https://github.com/rwellingtonr/face_recognition_new/blob/main/LICENSE.md) ![GitHub last commit](https://img.shields.io/github/last-commit/rwellingtonr/face_recognition_new) ![GitHub repo size](https://img.shields.io/github/repo-size/rwellingtonr/face_recognition_new) ![GitHub top language](https://img.shields.io/github/languages/top/rwellingtonr/face_recognition_new)
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Naereen/badges)
-
+<!-- GIF -->
+<!--
 <h2 align="left">
   <img src="" alt="face-recognition" width="600px" />
-  
-</h2>
+
+</h2> -->
 
 ## Motivations
 
-Web app created to learn how to make a full-stack app. Getting through the front-end, back-end and also database
+Web app created to learn how to make a full-stack app. Getting through the front-end, back-end, API Rest, cloud service and also database
 
 ## Features
 
@@ -29,10 +29,10 @@ This app uses the Clarifai API which allows face recognition on pictures
 ## Running Locally
 
 ```bash
-git clone
+git clone https://github.com/rwellingtonr/face_recognition_new.git
 
 # open the folder
-cd
+cd face_recognition_new
 
 #open the text editor
 code .
