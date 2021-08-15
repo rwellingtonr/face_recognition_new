@@ -45,9 +45,8 @@ export const connectionSignUp = async () => {
 
 // Check weather there is or there isn't a face in this picture
 export const checkFace = async (input) => {
-  domElements()
   try {
-    const response = await fetch(url + routes.imageurl, {
+    const response = await fetch(url + routes.imageUrl, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -70,6 +69,7 @@ export const checkFace = async (input) => {
 
 // This one should incrise the entries if find a face
 export const entriesCount = async (user) => {
+  //load the image
   try {
     const res = await fetch(url + routes.image, {
       method: "put",
@@ -81,11 +81,12 @@ export const entriesCount = async (user) => {
         id: user.id,
       }),
     })
-    //load the image
     //count the entries
-    return res.json()
+    const conter = await res.json()
+    return conter
   } catch (error) {
-    alert("Error to count your entries")
+    const msg = "Error to count your entries"
+    errorHandler(msg)
   }
 }
 

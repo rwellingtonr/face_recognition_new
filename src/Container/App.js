@@ -55,7 +55,7 @@ class App extends Component {
       this.setState({ imageUrl: input })
       //count the entries
       const count = await entriesCount(user)
-      this.setState({ ...user, entries: count })
+      this.setState(Object.assign(user, { entries: count }))
       //call the callculation
       this.displayFaceBox(calculateFaceLocation(checkingIn))
     }
