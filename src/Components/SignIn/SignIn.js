@@ -8,7 +8,6 @@ const SignIn = (props) => {
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      console.log(event.key)
       onSubmitSigin()
     }
   }
@@ -17,7 +16,7 @@ const SignIn = (props) => {
   const onSubmitSigin = async () => {
     try {
       const { loadUser, onRouteChange } = props
-      const user = connectionSignIn()
+      const user = await connectionSignIn()
       if (user.id) {
         loadUser(user)
         onRouteChange("home")
