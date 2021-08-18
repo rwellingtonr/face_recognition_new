@@ -19,12 +19,13 @@ This app uses the Clarifai API which allows face recognition on pictures
 
 ## Technologies
 
-| Font-End | Back-End  |  Database  | Deploy |
-| :------: | :-------: | :--------: | :----: |
-|          |           |            |        |
-| ReactJS  |  NodeJS   | PostgreSQL | Heroku |
-|          | ExpressJS |
+| Font-End | Back-End  |  Database  | Deploy  |
+| :------: | :-------: | :--------: | :-----: |
+|          |           |            |         |
+| ReactJS  |  NodeJS   | PostgreSQL | Heroku  |
+|          | ExpressJS |            | Netlify |
 |          |  KnexJS   |
+|          |   Rest    |
 
 ## Running Locally
 
