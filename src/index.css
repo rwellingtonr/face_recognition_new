@@ -3,13 +3,15 @@ html {
   -ms-overflow-style: none !important; /* Internet Explorer 10+ */
   scrollbar-width: none !important; /* Firefox */
   overflow: -moz-scrollbars-none !important;
+  background-repeat: no-repeat;
+  background: linear-gradient(87deg, #7d1869 0%, #bfb02f 100%);
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background: linear-gradient(87deg, #7d1869 0%, #bfb02f 100%);
 }
 
 button {
