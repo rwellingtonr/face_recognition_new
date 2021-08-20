@@ -29,11 +29,11 @@ const SignIn = (props) => {
   }
 
   return (
-    <article className="br3 ba b--black-10 mv4 w-80-ns w-50-m w-25-l mw6 center shadow-5">
-      <main className="pa4 black-80">
+    <article className="br3 ba b--silver-10 mv4 w-80-ns w-50-m w-25-l mw6 center shadow-5">
+      <main className="pa4 white-80">
         <div className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f2 fw6 ph0 center mh0">{pageName}</legend>
+            <legend className="f2 fw6 white center ph0 mh0">{pageName}</legend>
             {/* email  and Password*/}
             <DefaultForm
               onEmailChange={onEmailChange}
@@ -44,7 +44,8 @@ const SignIn = (props) => {
           <div className="">
             <input
               onClick={onSubmitSigin}
-              className="b ph2 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+              className="b ph2 pv2 input-reset ba b--silver
+               bg-transparent grow pointer f6 dib"
               type="submit"
               value={pageName}
             />
@@ -52,7 +53,7 @@ const SignIn = (props) => {
           <div className="lh-copy mt3">
             <a
               href="#0"
-              className="f5 link dim black db"
+              className="ba f5 link dim white db"
               onClick={() => props.onRouteChange("register")}
             >
               Register
