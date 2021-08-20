@@ -7,7 +7,7 @@ const passwordForm = ({ onPasswordChange, handleKeyPress }) => {
       <input
         onKeyPress={handleKeyPress}
         onChange={onPasswordChange}
-        className="b pa2 input-reset ba b--silver bg-transparent hover-bg-black hover-white w-80"
+        className="b pa2 silver input-reset ba b--silver bg-transparent hover-bg-near-black hover-white w-80"
         type="password"
         name="password"
         id="password"

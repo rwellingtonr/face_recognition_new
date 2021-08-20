@@ -10,10 +10,10 @@ body {
   background: linear-gradient(
       217deg,
       rgb(0 0 0 / 91%),
-      rgba(255, 0, 0, 0) 70.71%
+      rgb(43 24 24 / 0%) 70.71%
     ),
-    linear-gradient(127deg, rgb(13 2 50 / 93%), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgb(28 2 78 / 93%), rgb(0 0 31 / 91%) 70.71%);
+    linear-gradient(127deg, rgb(3 1 23 / 93%), rgb(32 14 49 / 13%) 70.71%),
+    linear-gradient(336deg, rgb(2 2 25), rgb(0 2 31 / 91%) 70.71%);
   height: 100vh;
   margin: 0;
   padding: 0;
