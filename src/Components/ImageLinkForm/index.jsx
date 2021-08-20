@@ -10,7 +10,7 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
         {"This smart app will detect faces in your images."}
       </p>
       <div className="center">
-        <div className="center form pa4 br3 shadow-5">
+        <div className="center w-80-ns w-60-m w-50-l form pa4 br3 shadow-5">
           <input
             type="text"
             id="inputForm"

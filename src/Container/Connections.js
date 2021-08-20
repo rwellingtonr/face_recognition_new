@@ -59,6 +59,7 @@ export const checkFace = async (input) => {
     const faceImg = await response.json()
     // if find a face in this picture it will return the
     if (faceImg.outputs[0].data.regions[0].value) {
+      console.log(faceImg.outputs[0].data.regions[0].value)
       return faceImg
     }
   } catch (err) {
@@ -91,26 +92,34 @@ export const entriesCount = async (user) => {
 }
 
 const domElements = () => {
-  //get the DOM elements
-  const headerGreetings = document.getElementById("greetings")
-  const imgLnk = document.getElementById("imgLnk")
-  //set element attributes
-  imgLnk.hidden = false
-  headerGreetings.hidden = false
+  try {
+    //get the DOM elements
+    const headerGreetings = document.getElementById("greetings")
+    const imgLnk = document.getElementById("imgLnk")
+    //set element attributes
+    imgLnk.hidden = false
+    headerGreetings.hidden = false
+  } catch (error) {
+    alert("Something went wrong!!")
+  }
 }
 const errorHandler = (msg) => {
-  //get the DOM elements
-  const headerGreetings = document.getElementById("greetings")
-  const imgLnk = document.getElementById("imgLnk")
-  const errorMsg = document.getElementById("erroMsg")
+  try {
+    //get the DOM elements
+    const headerGreetings = document.getElementById("greetings")
+    const imgLnk = document.getElementById("imgLnk")
+    const errorMsg = document.getElementById("erroMsg")
 
-  //apply the functions
-  imgLnk.hidden = true
-  headerGreetings.hidden = true
-  errorMsg.style.display = "block"
-  errorMsg.innerHTML = msg
-  setTimeout(() => {
-    errorMsg.style.display = "none"
-    domElements()
-  }, 7000)
+    //apply the functions
+    imgLnk.hidden = true
+    headerGreetings.hidden = true
+    errorMsg.style.display = "block"
+    errorMsg.innerHTML = msg
+    setTimeout(() => {
+      errorMsg.style.display = "none"
+      domElements()
+    }, 7000)
+  } catch (error) {
+    alert("Please, paste a PNG or JPG url")
+  }
 }
