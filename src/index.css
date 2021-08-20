@@ -6,6 +6,7 @@ html {
 }
 
 body {
+  /* background */
   background-repeat: no-repeat;
   background: linear-gradient(
       217deg,
@@ -15,16 +16,11 @@ body {
     linear-gradient(127deg, rgb(3 1 23 / 93%), rgb(32 14 49 / 13%) 70.71%),
     linear-gradient(336deg, rgb(2 2 25), rgb(0 2 31 / 91%) 70.71%);
   height: 100vh;
+  /* Font */
+  font-family: "Quicksand", sans-serif;
+  /* padding and margin */
   margin: 0;
   padding: 0;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  /* background: linear-gradient(
-      217deg,
-      rgb(1 1 1 / 91%),
-      rgba(255, 0, 0, 0) 70.71%
-    ),
-    linear-gradient(127deg, rgb(9 1 36 / 93%), rgb(3 6 40) 70.71%),
-    linear-gradient(336deg, rgb(18 3 46 / 93%), rgb(0 0 31 / 91%) 70.71%); */
 }
 
 button {
