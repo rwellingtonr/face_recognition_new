@@ -2,6 +2,8 @@ import React from "react"
 import "./styles.css"
 
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
+  document.title = "Face Recognition"
+
   return (
     <div>
       <p id="imgLnk" className="f4 ma-2 white">

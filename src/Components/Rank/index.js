@@ -1,7 +1,7 @@
 import React from "react"
 
 const Rank = ({ name, entries }) => {
-  return entries === 0 ? (
+  return entries < 1 ? (
     <div className="white f3">{`Hello ${name}, let's get start`}</div>
   ) : (
     <div>

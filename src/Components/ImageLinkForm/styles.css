@@ -1,8 +1,7 @@
 .form {
-  width: 700px;
-  background-color: #c99591;
+  background-color: #1a1937;
   opacity: 0.7;
-  background-image: radial-gradient(circle at center center, #050403, #c99591),
+  background-image: radial-gradient(circle at center center, #020104, #a275c9),
     repeating-radial-gradient(
       circle at center center,
       #050403,
