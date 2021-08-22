@@ -59,7 +59,6 @@ export const checkFace = async (input) => {
     const faceImg = await response.json()
     // if find a face in this picture it will return the
     if (faceImg.outputs[0].data.regions[0].value) {
-      console.log(faceImg.outputs[0].data.regions[0].value)
       return faceImg
     }
   } catch (err) {

@@ -16,7 +16,7 @@ import { calculateFaceLocation } from "../Components/FaceRecognition/FaceLocatio
 
 // liberty
 //Particles
-import PArticlesOpt from "./particlesjs-config.json"
+import ParticlesOpt from "./particlesjs-config.json"
 import Particles from "react-particles-js"
 
 //Conditionals to initialize the Web App
@@ -77,7 +77,7 @@ class App extends Component {
     const { name, entries } = this.state.user
     return (
       <div className="tc">
-        <Particles className="particles" params={PArticlesOpt} />
+        <Particles className="particles" params={ParticlesOpt} />
         <Navigation
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}

@@ -3,11 +3,12 @@
 [![GitHub](https://img.shields.io/github/license/rwellingtonr/monster_new?color=blue)](https://github.com/rwellingtonr/face_recognition_new/blob/main/LICENSE.md) ![GitHub last commit](https://img.shields.io/github/last-commit/rwellingtonr/face_recognition_new) ![GitHub repo size](https://img.shields.io/github/repo-size/rwellingtonr/face_recognition_new) ![GitHub top language](https://img.shields.io/github/languages/top/rwellingtonr/face_recognition_new)
 
 <!-- GIF -->
-<!--
+
 <h2 align="left">
   <img src="" alt="face-recognition" width="600px" />
+  <iframe src="https://giphy.com/embed/YhDp8fS92Xnqvlymue" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/facerecognition-YhDp8fS92Xnqvlymue">via GIPHY</a></p>
 
-</h2> -->
+</h2>
 
 ## Motivations
 
